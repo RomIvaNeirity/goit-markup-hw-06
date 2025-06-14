@@ -128,17 +128,6 @@ header {
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.nav-link.current::after {
-  border-radius: 2px;
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -1px;
-  width: 100%;
-  height: 4px;
-  background-color: #404bbf;
-}
-
 .nav-link:hover,
 .nav-link:focus,
 .contacts-link:hover,
@@ -148,6 +137,116 @@ header {
 
 .contacts-link {
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* mob-menu mob */
+
+.mob-menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.mob-menu.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.mob-menu-container {
+  position: relative;
+  padding-top: 72px;
+  padding-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.mob-menu-close {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  fill: #2e2f42;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  padding: 0;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.mob-menu-close:hover,
+.mob-menu-close:focus {
+  border: none;
+  background-color: #404bbf;
+}
+
+.mob-menu-nav {
+  display: flex;
+  margin-bottom: auto;
+}
+
+.mob-menu-nav-list {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  row-gap: 40px;
+}
+
+.mob-menu-nav-item {
+}
+
+.mob-menu-nav-link {
+  display: block;
+  padding: 0;
+  font: 700 36px / 1.11111 "Roboto", sans-serif;
+  letter-spacing: 0.02em;
+  color: #2e2f42;
+  position: relative;
+}
+
+.mob-menu-nav-link.current,
+.mob-menu-contacts-link.current {
+  color: #404bbf;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.mob-menu-contacts-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  margin-bottom: 48px;
+}
+
+.mob-menu-contacts-item {
+}
+
+.mob-menu-contacts-link {
+  font: 500 20px / 1.2 "Roboto", sans-serif;
+  letter-spacing: 0.02em;
+  color: #434455;
+}
+
+.mob-menu-contacts-link {
+}
+
+.mob-menu-icon-list {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40px;
 }
 
 /*hero*/
@@ -537,16 +636,16 @@ header {
 
 .modal {
   border-radius: 4px;
-  width: 408px;
+  width: 288px;
   min-height: 584px;
   box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12),
     0 2px 1px 0 rgba(0, 0, 0, 0.2);
   background: #fcfcfc;
-  padding: 72px 24px 24px 24px;
+  padding: 72px 16px 24px 16px;
   position: absolute;
-  top: 50%;
+  top: 8px;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%);
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -610,7 +709,7 @@ header {
 
 .modal-label {
   font-size: 12px;
-  line-height: 1.17;
+  line-height: 1.16667;
   letter-spacing: 0.04em;
   color: #8e8f99;
   display: block;
@@ -630,10 +729,10 @@ header {
 }
 
 .modal-input {
-  width: 100%;
+  /* width: 100%; */
   border: 1px solid rgba(46, 47, 66, 0.4);
   border-radius: 4px;
-  width: 360px;
+  width: 256px;
   height: 40px;
   background-color: transparent;
 
@@ -660,7 +759,7 @@ header {
   background-color: transparent;
   color: rgba(46, 47, 66, 0.4);
   letter-spacing: 0.04em;
-  line-height: 1.17;
+  line-height: 1.16667;
   font-size: 12px;
   border-radius: 4px;
   height: 120px;
@@ -722,6 +821,7 @@ header {
   justify-content: center;
   align-items: center;
   margin-right: 8px;
+
   fill: transparent;
 }
 
@@ -745,6 +845,8 @@ header {
 .modal-button:focus {
   background-color: #404bbf;
 }
+
+/* ----footer form - продовження */
 
 .footer-form-title {
   color: #ffffff;
@@ -838,6 +940,17 @@ header {
     gap: 40px;
   }
 
+  .nav-link.current::after {
+    border-radius: 2px;
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    width: 100%;
+    height: 4px;
+    background-color: #404bbf;
+  }
+
   .contacts {
     display: block;
     font-style: normal;
@@ -855,6 +968,12 @@ header {
     letter-spacing: 0.04em;
     color: #434455;
     padding: 0;
+  }
+
+  /* ---mob menu hidden----- */
+
+  .mob-menu {
+    display: none;
   }
 
   /* HEROO ___------ */
@@ -980,7 +1099,18 @@ header {
     width: 264px;
     margin-bottom: 0;
   }
+
+  .modal {
+    width: 408px;
+    padding: 72px 24px 24px 24px;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .modal-input {
+    width: 360px;
+  }
 }
+
 /* ____________ДЕСКТОП */
 
 @media screen and (min-width: 1158px) {
