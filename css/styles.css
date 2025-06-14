@@ -975,12 +975,12 @@ header {
     align-items: center;
   }
 
-.footer-input-email {
-  border: 1px solid rgba(255, 255, 255, 0.6);
-  width: 264px;
-  margin-bottom: 0;
+  .footer-input-email {
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    width: 264px;
+    margin-bottom: 0;
+  }
 }
-
 /* ____________ДЕСКТОП */
 
 @media screen and (min-width: 1158px) {
