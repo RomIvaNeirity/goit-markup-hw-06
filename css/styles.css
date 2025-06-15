@@ -165,6 +165,7 @@ header {
   position: relative;
   padding-top: 72px;
   padding-bottom: 40px;
+  padding-right: 24px;
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -228,7 +229,7 @@ header {
   display: flex;
   flex-wrap: wrap;
   gap: 24px;
-  margin-bottom: 48px;
+  padding-bottom: 48px;
 }
 
 .mob-menu-contacts-item {
@@ -246,7 +247,6 @@ header {
 .mob-menu-icon-list {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 40px;
 }
 
 /*hero*/
@@ -612,9 +612,30 @@ header {
 }
 
 .footer-form {
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 16px;
 }
 
 .footer-form-lable {
+}
+
+.footer-input-email {
+  color: #ffffff;
+  border-radius: 4px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  padding-left: 16px;
+  letter-spacing: 0.04em;
+  line-height: 2;
+  font-size: 12px;
+  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  height: 40px;
+  width: 288px;
+}
+
+.footer-input-email::placeholder {
+  color: rgba(255, 255, 255, 0.6);
 }
 
 .backdrop {
@@ -643,9 +664,9 @@ header {
   background: #fcfcfc;
   padding: 72px 16px 24px 16px;
   position: absolute;
-  top: 8px;
+  top: 50%;
   left: 50%;
-  transform: translate(-50%);
+  transform: translate(-50%, -50%);
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -858,25 +879,6 @@ header {
   text-align: center;
 }
 
-.footer-input-email {
-  color: #ffffff;
-  border-radius: 4px;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-  padding-left: 16px;
-  letter-spacing: 0.04em;
-  line-height: 2;
-  font-size: 12px;
-  background-color: transparent;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  height: 40px;
-  width: 288px;
-  margin-bottom: 16px;
-}
-
-.footer-input-email::placeholder {
-  color: rgba(255, 255, 255, 0.6);
-}
-
 .footer-button-subscribe {
   border-radius: 4px;
   border: none;
@@ -1022,6 +1024,10 @@ header {
     row-gap: 72px;
   }
 
+  .sctn-one-subtitle {
+    text-align: left;
+  }
+
   .sctn-one-item {
     width: 356px;
   }
@@ -1062,6 +1068,11 @@ header {
     flex-wrap: wrap;
     flex-direction: row;
     gap: 72px 24px;
+  }
+
+  .footer-logo,
+  .footer-subtitle {
+    text-align: left;
   }
 
   .footer-form-title {
@@ -1299,7 +1310,7 @@ header {
 
   .footer-logo {
     /* display: inline-block; */
-    text-align: left;
+    /* text-align: left; */
     /* margin-bottom: 16px; */
   }
 
